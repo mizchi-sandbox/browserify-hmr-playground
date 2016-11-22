@@ -1,0 +1,4 @@
+#!/bin/bash
+NODE_ENV=development ./node_modules/.bin/watchify -vd -p browserify-hmr -t babelify src/index.js -o public/bundle.js &
+./node_modules/.bin/http-server public/ -c 1 -a localhost &
+wait
